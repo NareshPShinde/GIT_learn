@@ -31,3 +31,132 @@ Git is the most widely used version control system because of the various absolu
 *   Git is meant to ensure the safety and integrity of versioned content.
     
 *   Each command in Git only takes some seconds to run and output results, so it saves a lot of developers' effort and time.
+
+# 🧠 Git & GitHub Cheat Sheet
+
+A concise and comprehensive cheat sheet for mastering Git commands and GitHub workflows.
+
+---
+
+## ⚙️ Git Configuration
+```bash
+git config --list                    # View all Git config
+git config --get user.email         # Get current Git email
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+git config --global alias.co checkout  # Shortcut alias
+```
+
+---
+
+## 📁 Repository Initialization & Cloning
+```bash
+git init                             # Initialize a Git repo
+git clone <repo_url>                # Clone an existing repo
+git clone -b <branch> <url>         # Clone specific branch
+git clone --bare <url>              # Clone a bare repo
+```
+
+---
+
+## 📝 Staging & Committing Changes
+```bash
+git status                           # Show file status
+git add <file>                       # Stage single file
+git add .                            # Stage all changes
+git commit -m "message"              # Commit staged files
+git commit -am "message"             # Stage and commit tracked files
+git commit --amend                   # Modify last commit
+```
+
+---
+
+## 🧾 Diff & History
+```bash
+git diff                             # Unstaged changes
+git diff --staged                    # Staged changes
+git log                              # Commit history
+git log --oneline                    # One line per commit
+git log --graph                      # Branch structure
+git show                             # Show specific commit
+git reflog                           # History of HEAD
+```
+
+---
+
+## 🌿 Branching & Merging
+```bash
+git branch                           # List branches
+git branch <branch>                 # Create new branch
+git checkout <branch>               # Switch branch
+git checkout -b <branch>            # Create and switch
+git merge <branch>                  # Merge into current
+git branch -d <branch>              # Delete merged branch
+git branch -D <branch>              # Force delete branch
+```
+
+---
+
+## 🔄 Undo & Reset
+```bash
+git revert <commit>                 # Revert a commit
+git reset <file>                    # Unstage file
+git reset --hard HEAD~1             # Reset to previous commit
+git rm <file>                       # Delete file from working & staging
+git rm --cached <file>              # Remove from staging only
+```
+
+---
+
+## 🧳 Stashing
+```bash
+git stash                            # Save changes
+git stash list                       # Show stashes
+git stash apply                      # Re-apply stash
+git stash pop                        # Apply and remove
+git stash drop                       # Delete stash
+```
+
+---
+
+## ✨ Rebase & Cherry-Pick
+```bash
+git rebase <branch>                 # Reapply commits over another base
+git rebase -i HEAD~N                # Interactive rebase
+git cherry-pick <commit>            # Apply single commit
+```
+
+---
+
+## 🌐 GitHub Specific
+```bash
+git remote -v                        # Show remotes
+git remote add origin <url>         # Link to GitHub repo
+git push -u origin <branch>         # Push new branch
+git pull origin <branch>            # Pull latest changes
+git fetch origin                    # Fetch from GitHub
+git push origin --delete <branch>   # Delete remote branch
+```
+
+---
+
+## 🔐 GitHub SSH Setup
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+# Copy public key and add to GitHub Settings > SSH Keys
+```
+
+---
+
+## ✅ Best Practices
+- Use `.gitignore` to exclude files
+- Always pull before pushing
+- Write meaningful commit messages
+- Use branches for features/fixes
+- Keep your main branch clean and deployable
+
+---
+
+> ✨ Keep this cheat sheet handy for efficient Git & GitHub development!
